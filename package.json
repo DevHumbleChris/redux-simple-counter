@@ -1,5 +1,5 @@
 {
-  "name": "practical",
+  "name": "simple-counter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,5 +32,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Redesign the redux counter to be a just simple redux counter >3",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "Am.Chris_KE",
+  "license": "MIT"
 }
