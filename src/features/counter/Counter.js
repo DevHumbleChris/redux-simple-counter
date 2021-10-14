@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  incrementIfOdd,
-  selectCount,
-} from './counterSlice';
+import React, { useState } from 'react'
+import { increment, decrement, incrementByAmount } from './CounterSlice'
+import { useSelector, useDispatch } from 'react-redux'
 import styles from './Counter.module.css';
 
 export function Counter() {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
-
-  const incrementValue = Number(incrementAmount) || 0;
-
+  const [value, setValue] = useState(0)
+  const { count } = useSelector(state => state.counter)
+  const dispatch = useDispatch()
+  const addAsync = (value) => {
+    setTimeout(() => {
+      dispatch(incrementByAmount(value))
+    }, 1200)
+  }
+  const addIfOdd = (count) => {
+    if(count % 2 !== 0) {
+      dispatch(incrementByAmount(parseInt(value)))
+    }
+  }
   return (
     <div>
       <div className={styles.row}>
@@ -40,24 +40,24 @@ export function Counter() {
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
-          value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
         />
         <button
           className={styles.button}
-          onClick={() => dispatch(incrementByAmount(incrementValue))}
+          onClick={() => dispatch(incrementByAmount(parseInt(value)))}
         >
           Add Amount
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(incrementValue))}
+          onClick={() => addAsync(parseInt(value))}
         >
           Add Async
         </button>
         <button
           className={styles.button}
-          onClick={() => dispatch(incrementIfOdd(incrementValue))}
+          onClick={() => addIfOdd(count)}
         >
           Add If Odd
         </button>
