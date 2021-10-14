@@ -1,5 +1,5 @@
 {
-  "name": "simple-counter",
+  "name": "redux-simple-counter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,5 +37,16 @@
   "main": "index.js",
   "devDependencies": {},
   "author": "Am.Chris_KE",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevHumbleChris/redux-simple-counter.git"
+  },
+  "keywords": [
+    "redux-simple-counter"
+  ],
+  "bugs": {
+    "url": "https://github.com/DevHumbleChris/redux-simple-counter/issues"
+  },
+  "homepage": "https://github.com/DevHumbleChris/redux-simple-counter#readme"
 }
